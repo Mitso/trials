@@ -35,7 +35,9 @@
       <div class="content__col-card">
         <div class="form-signin__logo">
           <img class="mb-4 form-signin__thumbnail" src="assets/images/beginner-php-fundamentals.png" alt="Please sign in" width="141" height="93">
-          <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+          <h1 id="trial_name_choice" class="h3 mb-3 font-weight-normal">
+            Please sign in
+          </h1>
         </div>
       </div>
       <div class="content__col-card">===</div>
@@ -46,7 +48,8 @@
   <script type="text/x-ecmascript" src="index.js"></script>
   <script>
     "use strict";
-
+    const contentTrialName = document.getElementById('trial_name_choice');
+    console.log( );
     let verifyMockLogin = sessionStorage.getItem('logins') ? JSON.parse(sessionStorage.getItem('logins')) : [];
 
     let loginsEmpty = typeof verifyMockLogin != "undefined"
@@ -56,8 +59,9 @@
     if(!loginsEmpty) {
       window.location.href = '/';
     }
+    contentTrialName.innerHTML = verifyMockLogin[2];
 
-    console.log(verifyMockLogin, loginsEmpty);
+  
   </script>
 </body>
 </html>
