@@ -33,6 +33,14 @@
 
       <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+
+        <select id="selectTrial" name="trials" class="form-control">
+          <option value="">Select Bootcamp Trial</option>
+          <option value="web-dev-trial">Web Development Bootcamp Trial</option>
+          <option value="another-trial">Trial another Bootcamp</option>
+          <option value="software-eng-trial">Software Engineering Bootcamp</option>
+        </select>
       <button id="btn_primary" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 
     </form>
@@ -45,13 +53,19 @@
       const mock_login = document.getElementById('mock_login'),
         inputEmail = document.getElementById('inputEmail'),
         inputPassword = document.getElementById('inputPassword'),
+        selectTrial = document.getElementById('selectTrial'),
         btn_primary = document.getElementById('btn_primary');
 
       btn_primary.addEventListener('click',function(e){
         e.preventDefault();
-        sessionStorage.setItem('logins', JSON.stringify([inputEmail.value, inputPassword.value]));
 
-        window.location.href='profile.html';
+        let selectTrialEmpty = selectTrial.options[selectTrial.selectedIndex] ? selectTrial.options[selectTrial.selectedIndex].value : '';
+
+        if(inputEmail !== '' && inputPassword!== '' && selectTrialEmpty !== '') {
+          sessionStorage.setItem('logins', JSON.stringify([inputEmail.value, inputPassword.value, selectTrialEmpty]));
+
+          window.location.href='profile.html';
+        }
       });
     });
 
