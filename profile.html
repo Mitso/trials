@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Hyperiondev - Full Stack Web Developer Bootcamp">
+  <meta name="author" content="Hyperiondev, Mitso Qalaba">
+  <title>Trial Bootcamps</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body>
+  <main class="wrapper" role="main">
+    <header class="header">
+      <div class="logo header__logo">
+        <img alt="Hyperiondev" src="assets/images/url@2x.png" width="260" height="40"/>
+        <h1 class="heading heading--primary">
+          Full Stack Web Developer Bootcamp
+        </h1>
+      </div>
+      <div class="header__profile">
+        <div class="profile">
+          <img class="profile__thumbnail" src="/assets/images/student.png" alt="Student Profile" width="72" height="72">
+        </div>
+        <ul class="profile-cta">
+          <li class="profile-cta__item">Edit profile</li>
+          <li class="profile-cta__item">Logout</li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="content"></div>
+
+    <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+  </main>
+  <script type="text/x-ecmascript" src="index.js"></script>
+  <script>
+    "use strict";
+
+    let verifyMockLogin = sessionStorage.getItem('logins') ? JSON.parse(sessionStorage.getItem('logins')) : [];
+
+    let loginsEmpty = typeof verifyMockLogin != "undefined"
+                        && verifyMockLogin != null
+                        && verifyMockLogin.length != null
+                        && verifyMockLogin.length > 0 ?  true : false;
+    if(!loginsEmpty) {
+      window.location.href = '/';
+    }
+
+    console.log(verifyMockLogin, loginsEmpty);
+  </script>
+</body>
+</html>
