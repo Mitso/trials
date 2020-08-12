@@ -8,42 +8,110 @@
   <title>Trial Bootcamps</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/main.css" />
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </head>
 <body>
   <main class="wrapper" role="main">
     <header class="header">
-      <div class="logo header__logo">
-        <img alt="Hyperiondev" src="assets/images/url@2x.png" width="260" height="40"/>
-        <h1 class="heading heading--primary">
-          Full Stack Web Developer Bootcamp
-        </h1>
+      <div class="header__logo">
+        <img alt="Hyperiondev" class="header__logo-thumbnail" src="assets/images/url.png" width="130" height="20"/>
+        <p class="header__title">Full Stack Web Developer Bootcamp</p>
       </div>
       <div class="header__profile">
-        <div class="profile">
-          <img class="profile__thumbnail" src="/assets/images/student.png" alt="Student Profile" width="72" height="72">
+        <div class="header__profile-wrap">
+          <img class="header__profil-thumbnail" src="/assets/images/student.png" alt="Student Profile" width="72" height="72">
         </div>
-        <ul class="profile-cta">
-          <li class="profile-cta__item">Edit profile</li>
-          <li class="profile-cta__item">Logout</li>
-        </ul>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Profile
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a id="editProfile" class="dropdown-item" href="#">
+                    Edit Profile
+                  </a>
+                  <a id="logOut" class="dropdown-item" href="#">
+                    Logout
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </header>
 
     <div class="content">
-      <div class="content__col-card">
-        <div class="form-signin__logo">
-          <img class="mb-4 form-signin__thumbnail" src="assets/images/beginner-php-fundamentals.png" alt="Please sign in" width="141" height="93">
-          <h1 id="trial_name_choice" class="h3 mb-3 font-weight-normal">
-            Please sign in
-          </h1>
+      <div class="content__main">
+        <div class="content__card">
+          <div class="content__sides form-signin__logo">
+            <div class="content__side">
+              <img class="mb-4 form-signin__thumbnail" src="assets/images/beginner-php-fundamentals.png" alt="Please sign in" width="141" height="93">
+            </div>
+            <div class="content__side">
+              <h1 id="trial_name_choice" class="heading">Please sign in</h1>
+              <button class="btn btn__micro">Continue your trial</button>
+            </div>
+          </div>
+
+          <div class="content-progress">
+          <h6 class="title">Your progress <span class="title__label">(1/4 complete)</span></h6>
+          <ul class="content-progress-list">
+            <li class="content-progress-list__item"><button class="btn btn__secondary btn__secondary--enabled">Industry Knowledge 1</button></li>
+            <li class="content-progress-list__item"><button class="btn btn__secondary">Industry Knowledge 2</button></li>
+            <li class="content-progress-list__item"><button class="btn btn__secondary">HTML Basics</button></li>
+            <li class="content-progress-list__item"><button class="btn btn__secondary">Your first PHP Script</button></li>
+          </ul>
+        </div>
+        </div>
+        <div class="content__other">
+          <h3 class="heading__secondary">Trial another Bootcamp</h3>
+          <ul class="other-list">
+            <li class="other-list__item">
+              <img alt="Mobile Developer Bootcamp" class="other-list__thumbnail" src="assets/images/layer-115.png" width="204" height="138"/>
+              <h5 class="other-list__excerpt">Mobile Developer Bootcamp</h5>
+            </li>
+            <li class="other-list__item">
+              <img alt="Software Engineering Bootcamp" class="other-list__thumbnail" src="assets/images/layer-114.png" width="204" height="138"/>
+              <h5 class="other-list__excerpt">Software Engineering Bootcamp</h5>
+            </li>
+          <ul>
         </div>
       </div>
-      <div class="content__col-card">===</div>
+
+      <div class="content__sidebar">
+        <div class="content__sidebar-top">
+          <div class="content__heading">
+            <h4>Your coding journey</h4>
+            <p class="tip">?</p>
+          </div>
+          <ul>
+            <li>
+              <p><span>1</span> Total programs written</p>
+            </li>
+            <li><p><span>4</span> Total code reviews</p></li>
+          <ul>
+        </div>
+        <div class="content__sidebar-top">
+        -->
+        </div>
+        <div class="content__sidebar-top">
+          ==>
+        </div>
+      </div>
+
     </div>
 
-    <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
   </main>
   <script type="text/x-ecmascript" src="index.js"></script>
   <script>
@@ -61,7 +129,7 @@
     }
     contentTrialName.innerHTML = verifyMockLogin[2];
 
-  
+
   </script>
 </body>
 </html>
