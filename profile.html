@@ -21,14 +21,16 @@
     <header class="header">
       <div class="header__logo">
         <img alt="Hyperiondev" class="header__logo-thumbnail" src="assets/images/url.png" width="130" height="20"/>
-        <p class="header__title">Full Stack Web Developer Bootcamp</p>
+        <p id="header_title" class="header__title">Full Stack Web Developer Bootcamp</p>
       </div>
       <div class="header__profile">
+
         <div class="header__profile-wrap">
           <img class="header__profil-thumbnail" src="/assets/images/student.png" alt="Student Profile" width="72" height="72">
         </div>
+
         <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -58,7 +60,7 @@
             </div>
             <div class="content__side">
               <h1 id="trial_name_choice" class="heading">Please sign in</h1>
-              <button class="btn btn__cta ">Continue your trial</button>
+              <button class="btn btn__cta">Continue your trial</button>
             </div>
           </div>
 
@@ -134,8 +136,12 @@
     const contentTrialName = document.getElementById('trial_name_choice'),
       logOut = document.getElementById('logOut'),
       editProfile = document.getElementById('editProfile'),
+      buttons = document.querySelectorAll('.btn__micro,.btn__cta'),
+      headerTitle = document.getElementById('header_title'),
       profileCTAs = [logOut, editProfile];
 
+
+      console.log(headerTitle);
     let verifyMockLogin = sessionStorage.getItem('logins') ? JSON.parse(sessionStorage.getItem('logins')) : [];
 
     let loginsEmpty = typeof verifyMockLogin != "undefined"
@@ -145,7 +151,7 @@
     if(!loginsEmpty) {
       window.location.href = '/';
     }
-    contentTrialName.innerHTML = verifyMockLogin[2];
+    contentTrialName.innerText = verifyMockLogin[2];
 
     profileCTAs.forEach(item => {
       item.addEventListener('click', function(e) {
@@ -156,6 +162,16 @@
       });
     });
 
+    buttons.forEach(item => {
+      item.addEventListener('click', function(e) {
+        alert(e.target.innerText + ' action');
+      });
+    });
+
+    if (window.innerWidth < 768) {
+      headerTitle.innerText = 'Get mentor support';
+      headerTitle.classList.add('header_title--small')
+    }
 
   </script>
 </body>

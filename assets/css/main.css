@@ -89,7 +89,7 @@ ul, li {
 
 .tip {
   cursor: pointer;
-  display: inline-block;
+  display: none;
   width: 30px;
   height: auto;
   position: relative;
@@ -136,21 +136,38 @@ ul, li {
 /* LAYOUT */
 
 .header {
+  align-items: center;
   background-color: var(--white);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  justify-content: space-between;
   padding: 0.5em 1em;
 }
 .header__title {
   color: var(--bright-red);
   display: inline-block;
   font-weight: 700;
+  margin: 0;
 }
-.header__logo {}
+.header_title--small {
+  color: #000;
+  font-size: 13px;
+}
+.header__logo {
+  overflow: auto;
+}
 .header__logo-thumbnail {
   vertical-align: middle;
   display: inline-block;
-  margin: 0 2em 0 0;
+  margin: 0 0.5em 0 0;
+  width: 40%;
+  height: auto;
 }
-.header__profile {}
+.header__profile {
+  align-items: baseline;
+  display: flex;
+}
 .header__profil-thumbnail {
   width: 30px;
   height: auto;
@@ -163,6 +180,11 @@ ul, li {
 }
 .navbar-light .navbar-nav .nav-link {
   color: #000;
+  font-size: 13px;
+}
+.navbar-nav .dropdown-menu {
+  left: -5em !important;
+  position: absolute !important;
 }
 .dropdown-toggle::after {
   display: none;
@@ -173,14 +195,28 @@ ul, li {
 }
 
 
-.content {}
-.content__main {}
-.content__card {}
+.content {
+  position: relative;
+}
+.content__main {
+  overflow: auto;
+}
+.content__card {
+  background-color: #fff;
+  box-shadow: rgb(237, 236, 234) 1px 1px 5px 1px;
+  border-radius: 5px;
+  margin: 1em;
+}
 
 .content__other  {
-  padding: 1em 0;
+  padding: 0 1em;
 }
-.content__sides {}
+.content__sides {
+  border-bottom: 1px solid var(--very-light-grey);
+  padding: 2em 0;
+  margin: 0 1.5em;
+  display: flex;
+}
 .content__side {
   display: inline-block;
 }
@@ -190,7 +226,7 @@ ul, li {
 }
 .content-progress {
   margin: 2em;
-  padding: 1em 0;
+  padding: 1em 0 4em;
 }
 .content-progress-list {}
 .content-progress-list__item {
@@ -198,7 +234,9 @@ ul, li {
   margin: 10px 5px 0;
 }
 
-.content__sidebar {}
+.content__sidebar {
+  padding: 2em;
+}
 .content__sidebar-top {
   border-bottom: 1px solid var(--very-light-grey);
   margin-bottom: 2em;
@@ -216,7 +254,9 @@ ul, li {
   background-color: #fff;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  margin: 1em 1em 0 0;
+  align-items: center;
+  display: flex;
+  margin: 1em;
 }
 .other-list__thumbnail {
   height: auto;
@@ -229,11 +269,13 @@ ul, li {
 }
 
 .journey-list {
-  margin: 1.5em 0 0;
+  margin: 0.5em 0 0;
 }
 
 .journey-list__item {}
-.journey-list__program {}
+.journey-list__program {
+  margin: 0;
+}
 
 .journey-list__counter {
   color: var(--bright-red);
@@ -283,7 +325,7 @@ ul, li {
   background-color: transparent;
   border: 1px solid var(--bright-red);
   color: var(--bright-red);
-  margin: 0 1em 0 0;
+  margin: 0.5em 1em 0 0;
   width: auto;
 }
 
@@ -301,7 +343,7 @@ ul, li {
 .form-signin__thumbnail {
   display: inline-block;
   height: auto;
-  margin: 0 0.5em 0 0;
+  margin: 0 1.5em 0 0;
   vertical-align: middle;
   width: 75px;
 }
@@ -346,23 +388,24 @@ ul, li {
     font-size: 3.5rem;
   }
 
+  .tip {
+    display: inline-block;
+  }
+
 
   /* LAYOUT */
 
-  .header {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    justify-content: space-between;
-  }
   .header__logo {
     align-items: center;
     display: flex;
   }
-  .header__profile {
-    display: flex;
+  .header__logo-thumbnail {
+    margin: 0 2em 0 0;
+    width: auto;
   }
-
+  .navbar-light .navbar-nav .nav-link {
+    font-size: 16px;
+  }
   .dropdown-menu {
     left: -3em !important
   }
@@ -373,9 +416,11 @@ ul, li {
     justify-content: space-around;
   }
   .other-list__item {
-    align-items: center;
-    display: flex;
     justify-content: flex-start;
+    margin: 1em 1em 0 0;
+  }
+  .other-list__thumbnail {
+
   }
 
   .content {
@@ -387,14 +432,11 @@ ul, li {
     margin: 5em 5% 5em 0;
     width: 70%;
   }
-  .content__card {
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: rgb(237, 236, 234) 1px 1px 5px 1px;
+  .content__other  {
+    padding: 1em;
   }
   .content__sides {
     margin: 2em;
-    border-bottom: 1px solid var(--very-light-grey);
     padding: 3em 0 1em;
   }
 
@@ -403,7 +445,9 @@ ul, li {
     width: 35%;
   }
 
-
+  .journey-list {
+    margin: 1.5em 0 0;
+  }
 
   .form-signin__thumbnail {
     margin: 0 2em 0 0;
