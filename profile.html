@@ -6,8 +6,6 @@
   <meta name="description" content="Hyperiondev - Full Stack Web Developer Bootcamp">
   <meta name="author" content="Hyperiondev, Mitso Qalaba">
   <title>Trial Bootcamps</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/main.css" />
@@ -122,8 +120,11 @@
   <script type="text/x-ecmascript" src="index.js"></script>
   <script>
     "use strict";
-    const contentTrialName = document.getElementById('trial_name_choice');
-    console.log( );
+    const contentTrialName = document.getElementById('trial_name_choice'),
+      logOut = document.getElementById('logOut'),
+      editProfile = document.getElementById('editProfile'),
+      profileCTAs = [logOut, editProfile];
+
     let verifyMockLogin = sessionStorage.getItem('logins') ? JSON.parse(sessionStorage.getItem('logins')) : [];
 
     let loginsEmpty = typeof verifyMockLogin != "undefined"
@@ -134,6 +135,15 @@
       window.location.href = '/';
     }
     contentTrialName.innerHTML = verifyMockLogin[2];
+
+    profileCTAs.forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        if(loginsEmpty) {
+          window.location.href = '/';
+        }
+      });
+    });
 
 
   </script>
