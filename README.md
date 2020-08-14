@@ -16,6 +16,9 @@ $ npm run start
 ### UX
 
 The entry page is a mock login page  - that saves your data to your browser sessionStorage.
+
 Enter a valid email address dummy data.
+
 Dummy password / none
+
 And select a Bootcamp trail option
