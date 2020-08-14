@@ -7,7 +7,6 @@
   <meta name="author" content="Hyperiondev, Mitso Qalaba">
   <title>Trial Bootcamps</title>
 
-  <!-- <link href="/assets/css/bootstrap.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/main.css" />
 
@@ -20,7 +19,7 @@
   <main class="wrapper" role="main">
     <header class="header">
       <div class="header__logo">
-        <img alt="Hyperiondev" class="header__logo-thumbnail" src="assets/images/url.png" width="130" height="20"/>
+        <img alt="Hyperiondev" class="header__logo-thumbnail" src="/assets/images/url.png" width="130" height="20"/>
         <p class="header__title">Full Stack Web Developer Bootcamp</p>
       </div>
     </header>
@@ -46,10 +45,8 @@
       </select>
 
       <button id="btn_primary" class="btn btn-lg btn-primary btn-block" type="submit">Mock Sign in</button>
-
     </form>
   </main>
-  <script type="text/x-ecmascript" src="index.js"></script>
   <script>
     "use strict";
     document.addEventListener('DOMContentLoaded',function(e) {
@@ -67,7 +64,7 @@
         if(inputEmail !== '' && inputPassword!== '' && selectTrialEmpty !== '') {
           sessionStorage.setItem('logins', JSON.stringify([inputEmail.value, inputPassword.value, selectTrialEmpty]));
 
-          window.location.href='profile.html';
+          window.location.href='/profile';
         }
       });
     });

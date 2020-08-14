@@ -1,0 +1,26 @@
+{
+  "name": "trials",
+  "version": "1.0.0",
+  "description": "Bootcamp Trial Web App ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mitso/trials.git"
+  },
+  "keywords": [
+    "Webapp"
+  ],
+  "author": "Mitso Qalaba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mitso/trials/issues"
+  },
+  "homepage": "https://github.com/Mitso/trials#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}

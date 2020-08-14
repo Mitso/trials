@@ -20,7 +20,7 @@
   <main class="wrapper" role="main">
     <header class="header">
       <div class="header__logo">
-        <img alt="Hyperiondev" class="header__logo-thumbnail" src="assets/images/url.png" width="130" height="20"/>
+        <img alt="Hyperiondev" class="header__logo-thumbnail" src="/assets/images/url.png" width="130" height="20"/>
         <p id="header_title" class="header__title">Full Stack Web Developer Bootcamp</p>
       </div>
       <div class="header__profile">
@@ -56,7 +56,7 @@
         <div class="content__card">
           <div class="content__sides form-signin__logo">
             <div class="content__side">
-              <img class="mb-4 form-signin__thumbnail" src="assets/images/beginner-php-fundamentals.png" alt="Please sign in" width="141" height="93">
+              <img class="mb-4 form-signin__thumbnail" src="/assets/images/beginner-php-fundamentals.png" alt="Please sign in" width="141" height="93">
             </div>
             <div class="content__side">
               <h1 id="trial_name_choice" class="heading">Please sign in</h1>
@@ -78,7 +78,7 @@
           <h3 class="heading__secondary heading__secondary--inner ">Trial another Bootcamp</h3>
           <ul class="other-list">
             <li class="other-list__item">
-              <img alt="Mobile Developer Bootcamp" class="other-list__thumbnail" src="assets/images/layer-115.png" width="204" height="138"/>
+              <img alt="Mobile Developer Bootcamp" class="other-list__thumbnail" src="/assets/images/layer-115.png" width="204" height="138"/>
               <h5 class="other-list__excerpt">Mobile Developer Bootcamp</h5>
             </li>
             <li class="other-list__item">
@@ -126,11 +126,8 @@
           <button class="btn btn__micro">Reserve your spot</button>
         </div>
       </div>
-
     </div>
-
   </main>
-  <script type="text/x-ecmascript" src="index.js"></script>
   <script>
     "use strict";
     const contentTrialName = document.getElementById('trial_name_choice'),
@@ -140,8 +137,6 @@
       headerTitle = document.getElementById('header_title'),
       profileCTAs = [logOut, editProfile];
 
-
-      console.log(headerTitle);
     let verifyMockLogin = sessionStorage.getItem('logins') ? JSON.parse(sessionStorage.getItem('logins')) : [];
 
     let loginsEmpty = typeof verifyMockLogin != "undefined"
